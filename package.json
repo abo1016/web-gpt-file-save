@@ -1,0 +1,61 @@
+{
+  "name": "web-gpt-file-save",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server for reliably saving ChatGPT conversation files into a local project.",
+  "homepage": "https://github.com/abo1016/web-gpt-file-save#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abo1016/web-gpt-file-save.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abo1016/web-gpt-file-save/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/server.js",
+    "dev": "tsx src/server.ts",
+    "configure": "node scripts/configure.mjs",
+    "auth:show": "node scripts/show-auth-password.mjs",
+    "quick": "npm run build && node scripts/start-quick.mjs",
+    "stable": "npm run build && node scripts/start-stable.mjs",
+    "preflight:stable": "node scripts/stable-preflight.mjs",
+    "preflight:production": "node scripts/production-preflight.mjs",
+    "start:production": "npm run preflight:production && node dist/src/server.js",
+    "test:smoke": "tsx test/importer-smoke.ts",
+    "test:security": "tsx test/security-smoke.ts",
+    "test:settings": "node test/runtime-settings-smoke.mjs",
+    "test:protocol": "tsx test/protocol-smoke.ts",
+    "test:auth": "tsx test/oauth-smoke.ts",
+    "test:public": "tsx test/public-smoke.ts",
+    "test:public:auth": "tsx test/public-oauth-smoke.ts",
+    "test": "npm run build && npm run test:settings && npm run test:security && npm run test:smoke && npm run test:protocol && npm run test:auth"
+  },
+  "keywords": [
+    "mcp",
+    "chatgpt",
+    "file-save",
+    "local-files",
+    "cloudflare"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@modelcontextprotocol/express": "^2.0.0",
+    "@modelcontextprotocol/ext-apps": "^2.0.0",
+    "@modelcontextprotocol/node": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "express": "^5.2.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

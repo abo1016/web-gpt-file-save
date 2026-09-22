@@ -1,0 +1,14 @@
+node_modules/
+dist/
+imports/
+artifacts/
+validation/
+coverage/
+.web-gpt-file-save/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+*.pem
+*.key

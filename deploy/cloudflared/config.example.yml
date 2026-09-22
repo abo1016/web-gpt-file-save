@@ -1,0 +1,12 @@
+# Stable Cloudflare Named Tunnel example for web-gpt-file-save.
+# Copy to a private path (for example ~/.cloudflared/config.yml) and replace placeholders.
+#
+# Do not commit the credentials JSON file.
+
+tunnel: <TUNNEL-UUID>
+credentials-file: /Users/<username>/.cloudflared/<TUNNEL-UUID>.json
+
+ingress:
+  - hostname: files.example.com
+    service: http://127.0.0.1:8878
+  - service: http_status:404
