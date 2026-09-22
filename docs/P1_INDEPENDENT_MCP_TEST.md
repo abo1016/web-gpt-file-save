@@ -1,6 +1,4 @@
-# P1 — independent MCP end-to-end test
-
-This project is intentionally independent of WebCodex at runtime.
+# P1 — ChatGPT to local filesystem end-to-end test
 
 ## Runtime architecture
 
@@ -14,8 +12,6 @@ ChatGPT
   -> validated DNS result + pinned connection IP
   -> FILE_SAVE_ROOT/<destination-or-original-file-name>
 ```
-
-WebCodex may be used to develop or inspect the project, but it is not part of the file-transfer path.
 
 ## What is already verified
 
@@ -64,7 +60,7 @@ After the uploaded attachment works, repeat with an image generated inside the C
 
 ## Acceptance criteria
 
-P1 is complete only when a real ChatGPT call causes a conversation file to appear under the configured local root without using a WebCodex file-transfer API.
+P1 is complete only when a real ChatGPT call causes a conversation file to appear under the configured local root through this MCP service.
 
 ### Verified real ChatGPT host-file result
 

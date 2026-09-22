@@ -9,8 +9,6 @@
 
 一个独立的 MCP 服务，用于把 ChatGPT 对话中的附件、生成文件和图片可靠地保存到 macOS 本地项目目录。
 
-**运行时不依赖 WebCodex。** WebCodex 只用于开发和维护这个仓库，不参与实际文件传输链路。
-
 ```text
 ChatGPT 对话文件
         -> 临时或固定公网 HTTPS MCP 地址
@@ -423,8 +421,6 @@ Phase 2 当前状态：
 
 A standalone MCP server for reliably saving files from a ChatGPT conversation directly to a local project on macOS.
 
-**Runtime does not depend on WebCodex.** WebCodex may be used to edit this repository during development, but it is not present in the file-transfer path.
-
 ```text
 ChatGPT conversation file
         -> public HTTPS MCP endpoint
@@ -826,8 +822,6 @@ The more focused bilingual deployment reference remains in `docs/DEPLOYMENT.md`.
 - [x] Repeat specifically with a user-uploaded attachment.
 - [x] Repeat with an image generated inside the ChatGPT conversation.
 - [x] Reconnect ChatGPT to a real fixed hostname / Named Tunnel, save a real host file through `save_file`, and independently verify byte count, content, and SHA-256 on the Mac.
-
-No WebCodex transfer tool is used in the runtime file-transfer path.
 
 ### Phase 2 — implementation foundation
 
